@@ -72,15 +72,16 @@ client.on('message', async (message) => {
                     function temp_call(){
                         // if((second > 0) && (timeCheck != undefined)){
                         if(timeCheck != undefined){    
-                            if((minute >= 10) && (second >=10)){
-                                mensaje.edit("Tiempo actual: "+minute+" : "+second);
-                            }else if((minute >= 10) && (second < 10)){
-                                mensaje.edit("Tiempo actual: "+minute+" : 0"+second);
-                            }else if((minute < 10) && (second >=10)){
-                                mensaje.edit("Tiempo actual: 0"+minute+" : "+second);
-                            }else if((minute < 10) && (second < 10)){
-                                mensaje.edit("Tiempo actual: 0"+minute+" : 0"+second);
-                            }
+                            // if((minute >= 10) && (second >=10)){
+                            //     mensaje.edit("Tiempo actual: "+minute+" : "+second);
+                            // }else if((minute >= 10) && (second < 10)){
+                            //     mensaje.edit("Tiempo actual: "+minute+" : 0"+second);
+                            // }else if((minute < 10) && (second >=10)){
+                            //     mensaje.edit("Tiempo actual: 0"+minute+" : "+second);
+                            // }else if((minute < 10) && (second < 10)){
+                            //     mensaje.edit("Tiempo actual: 0"+minute+" : 0"+second);
+                            // }
+                            mensaje.edit("Tiempo actual: "+minute+" : "+second);
 
                             // 0 0 0
                             if ((minute == 0) && (second == 0)) {
