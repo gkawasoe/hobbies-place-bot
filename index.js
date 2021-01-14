@@ -1,33 +1,36 @@
 const fs = require('fs');
 const prefix = '-';
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client2 = new Discord.client2();
 const guild = new Discord.Guild();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-client.commands = new Discord.Collection();
+const { Client, MessageEmbed } = require('discord.js');
+const client = new Client();
+
+client2.commands = new Discord.Collection();
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
 
-    client.commands.set(command.name, command);
+    client2.commands.set(command.name, command);
 }
 
 const numero_dia = new Date().getDay();
 
 if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){    
-    client.login(process.env.DJS_TOKEN);
+    client2.login(process.env.DJS_TOKEN);
 }else{
-    client.login("undefined");
+    client2.login("undefined");
 }
 
 
-client.on('ready', () => {
+client2.on('ready', () => {
 	console.log('Hobbies Place Bot esta listo..!!!');
-	client.user.setStatus('dnd');
+	client2.user.setStatus('dnd');
 })
 
-client.on('message', async (message) => {
+client2.on('message', async (message) => {
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -35,8 +38,8 @@ client.on('message', async (message) => {
 
     const command = args.shift().toLowerCase();
 
-    const channel_remote_duel = client.channels.cache.find(channel => channel.name === "remote-duel");
-    const temporizador_channel = client.channels.cache.find(channel => channel.name === 'temporizador');
+    const channel_remote_duel = client2.channels.cache.find(channel => channel.name === "remote-duel");
+    const temporizador_channel = client2.channels.cache.find(channel => channel.name === 'temporizador');
 
     let minute = args[0];
     let second = 60;
@@ -127,7 +130,7 @@ client.on('message', async (message) => {
                         })
 
                         //Sección de mensaje Embed
-                        embed_msj = new MessageEmbed()
+                        const embed_msj = new MessageEmbed()
                             .setTitle()
                             .setAuthor(guild.name)
                             .setColor(0x338aff);
