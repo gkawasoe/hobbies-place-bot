@@ -154,7 +154,7 @@ client.on('message', async (message) => {
                             if(!band){
                                  // for(let i=0;i<600000;i++){
                                     timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 5000);
+                                    temp_call(mensaje)}, 1500);
                                  // }
 
                             // }else{
