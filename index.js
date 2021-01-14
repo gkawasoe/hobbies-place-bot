@@ -79,10 +79,6 @@ client.on('message', async (message) => {
                                 temporizador_channel.bulkDelete(results).catch(console.error);
                             })
 
-                            channel_remote_duel.messages.fetch().then((results) => {
-                                channel_remote_duel.bulkDelete(results).catch(console.error);
-                            })
-
                             clearInterval(timeCheck);
                             timeCheck = undefined;
                             temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
@@ -126,17 +122,13 @@ client.on('message', async (message) => {
                             temporizador_channel.bulkDelete(results).catch(console.error);
                         })
 
-                        channel_remote_duel.messages.fetch().then((results) => {
-                            channel_remote_duel.bulkDelete(results).catch(console.error);
-                        })
-                        
                         temporizador_channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                         channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                         message.channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                        
                         minute--; second--; 
                         
-                        mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
+                        mensaje = await temporizador_channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
                             if(!band){
                                     timeCheck = setInterval(() => {
@@ -161,10 +153,6 @@ client.on('message', async (message) => {
                     temporizador_channel.bulkDelete(results).catch(console.error);
                 })
 
-                channel_remote_duel.messages.fetch().then((results) => {
-                    channel_remote_duel.bulkDelete(results).catch(console.error);
-                })
-                
                 temporizador_channel.send('TIEMPO DETENIDO...!!!');
                 channel_remote_duel.send('TIEMPO DETENIDO...!!!');
                 message.channel.send('TIEMPO DETENIDO...!!!');
