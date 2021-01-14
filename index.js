@@ -3,13 +3,6 @@ const prefix = '-';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-//const config = require('config/config.json');
-
-val = 0;
-let minute_2 = 0;
-let second_2 = 0;
-timeCheck = undefined;
-// module.exports.timeCheck = undefined;
 
 client.commands = new Discord.Collection();
 
@@ -19,9 +12,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
-
-//const channel = new Discord.TextChannel();
 const numero_dia = new Date().getDay();
 
 if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){    
@@ -34,9 +24,6 @@ if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){
 client.on('ready', () => {
 	console.log('Hobbies Place Bot esta listo..!!!');
 	client.user.setStatus('dnd');
-
-	
-	//console.log(remote_duel_channel);
 })
 
 client.on('message', async (message) => {
@@ -49,18 +36,10 @@ client.on('message', async (message) => {
 
     const channel_remote_duel = client.channels.cache.find(channel => channel.name === "remote-duel");
     const temporizador_channel = client.channels.cache.find(channel => channel.name === 'temporizador');
-    
-    
 
-    hour = 0;
     let minute = args[0];
     let second = 60;
     let band=false;    
-
-    // const hour = 0;
-    // const minute = args[0];
-    // const second = 59;
-    // const band=false;    
 
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
@@ -70,20 +49,7 @@ client.on('message', async (message) => {
                 if((minute <= 60) && (minute > 0)){
                     
                     function temp_call(){
-                        // if((second > 0) && (timeCheck != undefined)){
-                        // if(timeCheck != undefined){    
-                            // if((minute >= 10) && (second >=10)){
-                            //     mensaje.edit("Tiempo actual: "+minute+" : "+second);
-                            // }else if((minute >= 10) && (second < 10)){
-                            //     mensaje.edit("Tiempo actual: "+minute+" : 0"+second);
-                            // }else if((minute < 10) && (second >=10)){
-                            //     mensaje.edit("Tiempo actual: 0"+minute+" : "+second);
-                            // }else if((minute < 10) && (second < 10)){
-                            //     mensaje.edit("Tiempo actual: 0"+minute+" : 0"+second);
-                            // }
                         
-
-                        // 0 0 0
                         if ((minute == 0) && (second == 0)) {
                             // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
@@ -99,8 +65,6 @@ client.on('message', async (message) => {
                         
                         mensaje.edit("Tiempo actual: "+minute+" : "+second);
                         second--;     
-                        
-                        
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
@@ -138,6 +102,9 @@ client.on('message', async (message) => {
             break;
 
             case 'stop':
+                message.channel.messages.fetch().then((results) => {
+                    message.channel.bulkDelete(results).catch(console.error);
+                })
                 // temporizador_channel.send('TIEMPO DETENIDO...!!!');
                 // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
                 message.channel.send('TIEMPO DETENIDO...!!!');
