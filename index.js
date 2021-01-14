@@ -78,7 +78,7 @@ client.on('message', async (message) => {
                             clearInterval(timeCheck);
                             timeCheck = undefined;
                             // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
-                            // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
+                            channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                             message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             band=true; 
                         }
@@ -140,7 +140,7 @@ client.on('message', async (message) => {
                     message.channel.bulkDelete(results).catch(console.error);
                 })
                 // temporizador_channel.send('TIEMPO DETENIDO...!!!');
-                // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
+                channel_remote_duel.send('TIEMPO DETENIDO...!!!');
                 message.channel.send('TIEMPO DETENIDO...!!!');
                 clearInterval(timeCheck);
                 timeCheck = undefined;
