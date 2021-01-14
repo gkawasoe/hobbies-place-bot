@@ -86,11 +86,11 @@ client2.on('message', async (message) => {
                             clearInterval(timeCheck);
                             timeCheck = undefined;
                             // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
-                            //Sección de mensaje Embed
+                            //Sección de mensaje Embed para "TIEMPO FINALIZADO"
                             embed_msj2 = new MessageEmbed()
                                 .setTitle("TIEMPO FINALIZADO")
                                 // .setAuthor("Hobbies Place")
-                                .setColor(0x338aff)
+                                .setColor(0xfa1212)
                                 // .setThumbnail("https://tenor.com/Gqfw.gif")
                                 .setDescription("00:00")
                                 .setImage("https://tenor.com/vOsc.gif");
@@ -98,13 +98,24 @@ client2.on('message', async (message) => {
                                 channel_remote_duel.send(embed_msj2);
 
                             //Fin de sección
-                            channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
+                            // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                             // message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             band=true; 
                         }
 
                         if((minute == 1) && (second == 0)){
-                            channel_remote_duel.send(" JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
+                            //Sección de mensaje Embed para "TIEMPO DE 1 MINUTO"
+                            embed_msj3 = new MessageEmbed()
+                                .setTitle("*** AVISO IMPORTANTE ***")
+                                // .setAuthor("Hobbies Place")
+                                .setColor(0xfa1212)
+                                // .setThumbnail("https://tenor.com/Gqfw.gif")
+                                .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!")
+                                .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
+                                channel_remote_duel.send(embed_msj3);
+
+                            //Fin de sección
+                            // channel_remote_duel.send("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
                         }
 
                         if((minute > 0) && (second == 0)) {
@@ -149,7 +160,6 @@ client2.on('message', async (message) => {
                             // .setThumbnail("https://tenor.com/Gqfw.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
                             .setImage("https://i.imgflip.com/1ift34.jpg");
-                            https://tenor.com/vOsc.gif
                             channel_remote_duel.send(embed_msj);
 
                         //Fin de sección
