@@ -55,7 +55,7 @@ client.on('message', async (message) => {
     hour = 0;
     let minute = args[0];
     let second = 60;
-    band=false;    
+    let band=false;    
 
     // const hour = 0;
     // const minute = args[0];
@@ -71,9 +71,6 @@ client.on('message', async (message) => {
                     
                     function temp_call(){
                         if((second > 0) && (timeCheck != undefined)){
-                            // second--; //second_2--;
-
-                            // mensaje.edit('El tiempo actual es: '+minute+' : '+second);
                             
                             if((minute >= 10) && (second >=10)){
                                 mensaje.edit("Tiempo actual: "+minute+" : "+second);
@@ -89,7 +86,7 @@ client.on('message', async (message) => {
                             if ((minute == 0) && (second == 0)) {
                                 temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                                 channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                band=true;
+                                band=true; i=3540000;
                             }
                          
                             // 0 1 1
@@ -150,8 +147,10 @@ client.on('message', async (message) => {
                         mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
                             if(!band){
-                                timeCheck = setInterval(() => {
+                                for(let i=0;i<3540000;i++){
+                                    timeCheck = setInterval(() => {
                                     temp_call(mensaje)}, 1000);
+                                }
 
                             }else{
                                 console.log('Tiempo Finalizado');
