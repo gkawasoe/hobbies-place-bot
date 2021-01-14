@@ -84,15 +84,17 @@ client.on('message', async (message) => {
 
                             // 0 0 0
                             if ((minute == 0) && (second == 0)) {
-                                temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
+                                // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                                // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
+                                message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                                 band=true; 
                             }
                          
                             // 0 1 1
                                 if((minute == 1) && (second == 0)){
-                                    temporizador_channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                                    channel_remote_duel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                                    // temporizador_channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                                    // channel_remote_duel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                                    message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
                                     minute--;
                                     second = 59;
                                     
@@ -103,8 +105,9 @@ client.on('message', async (message) => {
                                 division = minute/10;
 
                                 if(Number.isInteger(division)){
-                                    temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                                    channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                                    // temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                                    // channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                                    message.channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
                                 }
                                     minute--; 
                                     second = 59;
@@ -120,6 +123,7 @@ client.on('message', async (message) => {
                             // if ((minute > 0) && (second == 0)) {
                             //     minute--; //minute_2--;
                             // }
+                            second--;
                         }
                     }
 
@@ -136,26 +140,27 @@ client.on('message', async (message) => {
                         })
                         
                         if(minute>=10){ 
-                            temporizador_channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
-                            channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
+                            // temporizador_channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
+                            // channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
+                            message.channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
                         }else{
-                            temporizador_channel.send('RONDA INICIADA (0'+minute+' minutos), SUERTE A TOD@S...!!!');
-                            channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
+                            // temporizador_channel.send('RONDA INICIADA (0'+minute+' minutos), SUERTE A TOD@S...!!!');
+                            // channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
                         }
                         minute--; second--; 
                         
                         mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
                             if(!band){
-                                // for(let i=0;i<60;i++){
+                                 for(let i=0;i<600000;i++){
                                     timeCheck = setInterval(() => {
                                     temp_call(mensaje)}, 1000);
-                                // }
+                                 }
 
                             }else{
                                 console.log('Tiempo Finalizado');
-                                temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!")
+                                // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                                // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!")
                             }
                     }else{
                         message.reply('Acceso denegado...!!!').catch(console.error);
@@ -170,8 +175,9 @@ client.on('message', async (message) => {
             break;
 
             case 'stop':
-                temporizador_channel.send('TIEMPO DETENIDO...!!!');
-                channel_remote_duel.send('TIEMPO DETENIDO...!!!');
+                // temporizador_channel.send('TIEMPO DETENIDO...!!!');
+                // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
+                message.channel.send('TIEMPO DETENIDO...!!!');
                 clearInterval(timeCheck);
                 timeCheck = undefined;
             break;
