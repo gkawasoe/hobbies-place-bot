@@ -2,6 +2,7 @@ const fs = require('fs');
 const prefix = '-';
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const guild = new Discord.Guild();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 client.commands = new Discord.Collection();
@@ -124,6 +125,15 @@ client.on('message', async (message) => {
                         temporizador_channel.messages.fetch().then((results) => {
                             temporizador_channel.bulkDelete(results).catch(console.error);
                         })
+
+                        //Sección de mensaje Embed
+                        embed_msj = new MessageEmbed()
+                            .setTitle()
+                            .setAuthor(guild.name)
+                            .setColor(0x338aff);
+                            channel_remote_duel.send(embed_msj);
+
+                        //Fin de sección
 
                         channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                         
