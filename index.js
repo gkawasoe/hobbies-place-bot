@@ -3,7 +3,7 @@ const prefix = '-';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const config = require('config/config.json');
+//const config = require('config/config.json');
 
 val = 0;
 let minute_2 = 0;
