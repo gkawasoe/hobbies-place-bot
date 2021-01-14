@@ -88,9 +88,10 @@ client.on('message', async (message) => {
                         }
 
                         if ((minute > 0) && (second == 0)) {
+                            division = minute % 10;
                             minute--; 
                             second = 60;
-                            division = minute % 10;
+                            
 
                             if(division == 0){
                                 console.log('residuo: '+division);
