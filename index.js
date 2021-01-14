@@ -89,9 +89,7 @@ client2.on('message', async (message) => {
                             //Sección de mensaje Embed para "TIEMPO FINALIZADO"
                             embed_msj2 = new MessageEmbed()
                                 .setTitle("TIEMPO FINALIZADO")
-                                // .setAuthor("Hobbies Place")
                                 .setColor(0xfa1212)
-                                // .setThumbnail("https://tenor.com/Gqfw.gif")
                                 .setDescription("00:00")
                                 .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
                                 
@@ -106,10 +104,8 @@ client2.on('message', async (message) => {
                         if((minute == 1) && (second == 0)){
                             //Sección de mensaje Embed para "TIEMPO DE 1 MINUTO"
                             embed_msj3 = new MessageEmbed()
-                                .setTitle("*** AVISO IMPORTANTE ***")
-                                // .setAuthor("Hobbies Place")
+                                .setTitle("AVISO IMPORTANTE")
                                 .setColor(0xf6fa12)
-                                // .setThumbnail("https://tenor.com/Gqfw.gif")
                                 .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!")
                                 .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
                                 channel_remote_duel.send(embed_msj3);
@@ -127,10 +123,8 @@ client2.on('message', async (message) => {
                             if(division == 0){
                                 //Sección de mensaje Embed para "TIEMPO DE CADA 10 MINUTO"
                                 embed_msj4 = new MessageEmbed()
-                                    .setTitle("*** AVISO IMPORTANTE ***")
-                                    // .setAuthor("Hobbies Place")
+                                    .setTitle("AVISO IMPORTANTE")
                                     .setColor(0xf6fa12)
-                                    // .setThumbnail("https://tenor.com/Gqfw.gif")
                                     .setDescription("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!")
                                     .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
                                     channel_remote_duel.send(embed_msj4);
@@ -166,11 +160,9 @@ client2.on('message', async (message) => {
                         //Sección de mensaje Embed para "RONDA INICIADA"
                         embed_msj = new MessageEmbed()
                             .setTitle("RONDA INICIADA")
-                            // .setAuthor("Hobbies Place")
                             .setColor(0x338aff)
-                            // .setThumbnail("https://tenor.com/Gqfw.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
-                            .addField("Para visualizar el tiempo, por favor entrar a la sala de #temporizador")
+                            .addField("Para visualizar el tiempo, por favor entrar a la sala de #temporizador.")
                             .setImage("https://i.imgflip.com/1ift34.jpg");
                             channel_remote_duel.send(embed_msj);
 
@@ -236,9 +228,7 @@ client2.on('message', async (message) => {
                             //Sección de mensaje Embed para "TIEMPO FINALIZADO"
                             embed_msj2_extra = new MessageEmbed()
                                 .setTitle("TIEMPO EXTRA FINALIZADO")
-                                // .setAuthor("Hobbies Place")
                                 .setColor(0xfa1212)
-                                // .setThumbnail("https://tenor.com/Gqfw.gif")
                                 .setDescription("00:00")
                                 .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
                                 
@@ -254,10 +244,8 @@ client2.on('message', async (message) => {
                         if((minute == 1) && (second == 0)){
                             //Sección de mensaje Embed para "TIEMPO DE 1 MINUTO"
                             embed_msj3_extra = new MessageEmbed()
-                                .setTitle("*** AVISO IMPORTANTE ***")
-                                // .setAuthor("Hobbies Place")
+                                .setTitle("AVISO IMPORTANTE")
                                 .setColor(0xf6fa12)
-                                // .setThumbnail("https://tenor.com/Gqfw.gif")
                                 .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO DEL TIEMPO EXTRA...!!!")
                                 .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
                                 channel_remote_duel.send(embed_msj3_extra);
@@ -275,10 +263,8 @@ client2.on('message', async (message) => {
                             if(division == 0){
                                 //Sección de mensaje Embed para "TIEMPO DE CADA 10 MINUTO"
                                 embed_msj4_extra = new MessageEmbed()
-                                    .setTitle("*** AVISO IMPORTANTE ***")
-                                    // .setAuthor("Hobbies Place")
+                                    .setTitle("AVISO IMPORTANTE")
                                     .setColor(0xf6fa12)
-                                    // .setThumbnail("https://tenor.com/Gqfw.gif")
                                     .setDescription("JUGADORES, QUEDAN "+min_capture+" MINUTOS DEL TIEMPO EXTRA...!!!")
                                     .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
                                     channel_remote_duel.send(embed_msj4_extra);
@@ -314,9 +300,7 @@ client2.on('message', async (message) => {
                         //Sección de mensaje Embed para "RONDA INICIADA"
                         embed_msj_extra = new MessageEmbed()
                             .setTitle("TIEMPO EXTRA INICIADO")
-                            // .setAuthor("Hobbies Place")
                             .setColor(0x338aff)
-                            // .setThumbnail("https://tenor.com/Gqfw.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
                             .addField("Para visualizar el tiempo, por favor entrar a la sala de #temporizador")
                             .setImage("https://i.pinimg.com/originals/d6/ed/94/d6ed9448c359a332e38472af219c1d5d.jpg");
