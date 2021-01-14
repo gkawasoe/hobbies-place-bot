@@ -1,7 +1,7 @@
 const fs = require('fs');
 const prefix = '-';
 const Discord = require('discord.js');
-const client2 = new Discord.client2();
+const client2 = new Discord.Client();
 const guild = new Discord.Guild();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
