@@ -23,7 +23,7 @@ for(const file of commandFiles){
 //const channel = new Discord.TextChannel();
 
 
-client.login('Nzk3OTgxNDMwMTc2NTQ2ODk2.X_uYHg.JIY_0xmNqD_gqEtNImtyo1hCQD4');
+client.login('Nzk3OTgxNDMwMTc2NTQ2ODk2.X_uYHg.WqMMQ9aguXmKl0RlrYtsWpKcUuQ');
 
 client.on('ready', () => {
 	console.log('Hobbies Place Bot esta listo..!!!');
@@ -41,7 +41,7 @@ client.on('message', async (message) => {
 
     const command = args.shift().toLowerCase();
 
-    const source = client.login('Nzk3OTgxNDMwMTc2NTQ2ODk2.X_uYHg.JIY_0xmNqD_gqEtNImtyo1hCQD4');
+    const source = client.login('Nzk3OTgxNDMwMTc2NTQ2ODk2.X_uYHg.WqMMQ9aguXmKl0RlrYtsWpKcUuQ');
 
     const channel_remote_duel = client.channels.cache.find(channel => channel.name === "remote-duel");
     const temporizador_channel = client.channels.cache.find(channel => channel.name === 'temporizador');
