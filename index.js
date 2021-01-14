@@ -22,9 +22,14 @@ for(const file of commandFiles){
 
 
 //const channel = new Discord.TextChannel();
+const numero_dia = new Date().getDay();
 
+if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){    
+    client.login(process.env.DJS_TOKEN);
+}else{
+    client.login("undefined");
+}
 
-client.login(process.env.DJS_TOKEN);
 
 client.on('ready', () => {
 	console.log('Hobbies Place Bot esta listo..!!!');
@@ -41,8 +46,6 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
 
     const command = args.shift().toLowerCase();
-
-    const source = client.login(process.env.DJS_TOKEN);
 
     const channel_remote_duel = client.channels.cache.find(channel => channel.name === "remote-duel");
     const temporizador_channel = client.channels.cache.find(channel => channel.name === 'temporizador');
@@ -102,7 +105,7 @@ client.on('message', message => {
                                 
                                 division = minute/10;
 
-                                if(division.isInteger()){
+                                if(Number.isInteger(division)){
                                     temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
                                     channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
                                 }
