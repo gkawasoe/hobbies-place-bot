@@ -113,16 +113,16 @@ client.on('message', async (message) => {
                                     second = 59; //second_2 = 59;
                             }
                             //1 0 0 
-                            if ((minute == 0) && (second == 0)) {
-                                second = 59; //second_2 = 59;
-                                minute = 59; //minute_2 = 59;
-                            }
+                            // if ((minute == 0) && (second == 0)) {
+                            //     second = 59; //second_2 = 59;
+                            //     minute = 59; //minute_2 = 59;
+                            // }
                             //0 0 1 //1 0 1 //1 1 1 
                             
-                            //1 1 0
-                            if ((minute > 0) && (second == 0)) {
-                                minute--; //minute_2--;
-                            }
+                            // //1 1 0
+                            // if ((minute > 0) && (second == 0)) {
+                            //     minute--; //minute_2--;
+                            // }
                         }
                     }
 
@@ -151,7 +151,7 @@ client.on('message', async (message) => {
                             
                             if(!band){
                                 timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 999);
+                                    temp_call(mensaje)}, 1000);
 
                             }else{
                                 console.log('Tiempo Finalizado');
