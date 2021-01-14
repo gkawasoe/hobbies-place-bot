@@ -89,19 +89,7 @@ client.on('message', async (message) => {
                                 // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                                 message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                                 band=true; 
-                            }
-                         
-                            // 0 1 1
-                            // if((minute == 1) && (second == 0)){
-                            //     // temporizador_channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                            //     // channel_remote_duel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                            //     message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                            //     minute--;
-                            //     second = 59;
-                                
-                            // }
-                            //0 1 0
-                            if (((minute > 0) && (second == 0)) || ((minute == 1) && (second == 0))) {
+                            }else if (((minute > 0) && (second == 0)) || ((minute == 1) && (second == 0))) {
                                 
                                 division = minute/10;
 
@@ -115,7 +103,33 @@ client.on('message', async (message) => {
                                     minute--; 
                                     second = 59;
                             }
-                            second--;
+                            second--; 
+                         
+                            // 0 1 1
+                            // if((minute == 1) && (second == 0)){
+                            //     // temporizador_channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                            //     // channel_remote_duel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                            //     message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                            //     minute--;
+                            //     second = 59;
+                                
+                            // }
+                            //0 1 0
+                            // if (((minute > 0) && (second == 0)) || ((minute == 1) && (second == 0))) {
+                                
+                            //     division = minute/10;
+
+                            //     if(Number.isInteger(division)){
+                            //         // temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                            //         // channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                            //         message.channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                            //     }else{
+                            //         message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                            //     }
+                            //         minute--; 
+                            //         second = 59;
+                            // }
+                            // second--;
                         }
                     }
 
