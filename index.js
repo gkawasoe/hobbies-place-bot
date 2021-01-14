@@ -86,7 +86,7 @@ client.on('message', async (message) => {
                             if ((minute == 0) && (second == 0)) {
                                 temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                                 channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                band=true; i=5000;
+                                band=true; 
                             }
                          
                             // 0 1 1
@@ -147,7 +147,7 @@ client.on('message', async (message) => {
                         mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
                             if(!band){
-                                for(let i=0;i<5000;i++){
+                                for(let i=0;i<60;i++){
                                     timeCheck = setInterval(() => {
                                     temp_call(mensaje)}, 1000);
                                 }
