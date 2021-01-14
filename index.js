@@ -151,7 +151,7 @@ client.on('message', async (message) => {
                             
                             if(!band){
                                 timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 1000);
+                                    temp_call(mensaje)}, 999);
 
                             }else{
                                 console.log('Tiempo Finalizado');
