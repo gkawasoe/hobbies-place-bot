@@ -71,7 +71,7 @@ client.on('message', async (message) => {
                     
                     function temp_call(){
                         // if((second > 0) && (timeCheck != undefined)){
-                        if(timeCheck != undefined){    
+                        // if(timeCheck != undefined){    
                             // if((minute >= 10) && (second >=10)){
                             //     mensaje.edit("Tiempo actual: "+minute+" : "+second);
                             // }else if((minute >= 10) && (second < 10)){
@@ -130,7 +130,7 @@ client.on('message', async (message) => {
                             //         second = 59;
                             // }
                             // second--;
-                        }
+                        // }
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
