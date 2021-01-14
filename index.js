@@ -39,7 +39,7 @@ client.on('ready', () => {
 	//console.log(remote_duel_channel);
 })
 
-client.on('message', message => {
+client.on('message', async (message) => {
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -147,7 +147,7 @@ client.on('message', message => {
                         }
                         minute--; second--; 
                         
-                        mensaje = message.channel.send('El tiempo actual es: '+minute+' : '+second);   
+                        mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
                             if(!band){
                                 timeCheck = setInterval(() => {
