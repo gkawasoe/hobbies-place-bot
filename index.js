@@ -162,7 +162,7 @@ client2.on('message', async (message) => {
                             .setTitle("RONDA INICIADA")
                             .setColor(0x338aff)
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
-                            .addField("Para visualizar el tiempo, por favor entrar a la sala de #temporizador.")
+                            .addField("Aviso: ","Para visualizar el tiempo, por favor entrar a la sala de #temporizador.",true)
                             .setImage("https://i.imgflip.com/1ift34.jpg");
                             channel_remote_duel.send(embed_msj);
 
@@ -302,7 +302,7 @@ client2.on('message', async (message) => {
                             .setTitle("TIEMPO EXTRA INICIADO")
                             .setColor(0x338aff)
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
-                            .addField("Para visualizar el tiempo, por favor entrar a la sala de #temporizador")
+                            .addField("Aviso: ","Para visualizar el tiempo, por favor entrar a la sala de #temporizador.",true)
                             .setImage("https://i.pinimg.com/originals/d6/ed/94/d6ed9448c359a332e38472af219c1d5d.jpg");
                             channel_remote_duel.send(embed_msj_extra);
 
