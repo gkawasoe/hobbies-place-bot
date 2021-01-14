@@ -81,7 +81,7 @@ client.on('message', async (message) => {
                             // }else if((minute < 10) && (second < 10)){
                             //     mensaje.edit("Tiempo actual: 0"+minute+" : 0"+second);
                             // }
-                        mensaje.edit("Tiempo actual: "+minute+" : "+second);
+                        
 
                         // 0 0 0
                         if ((minute == 0) && (second == 0)) {
@@ -89,17 +89,12 @@ client.on('message', async (message) => {
                             // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                             message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             band=true; 
-                        }else if ((minute > 0) && (second == 0)) {
-                            
-                            // division = minute%10;
+                        }
 
-                            // if(division == 0){
-                            //     // temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                            //     // channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                            //     message.channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                            // }
-                                minute--; 
-                                second = 59;
+                        if ((minute > 0) && (second == 0)) {
+                            minute--; 
+                            second = 60;
+                            mensaje.edit("Tiempo actual: "+minute+" : 59");
                         }
                         second--; 
                     }
