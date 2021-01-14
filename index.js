@@ -151,14 +151,15 @@ client.on('message', async (message) => {
                         
                         mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
-                            if(!band){
-                                 for(let i=0;i<600000;i++){
+                            // if(!band){
+                            while(!band){
+                                 // for(let i=0;i<600000;i++){
                                     timeCheck = setInterval(() => {
                                     temp_call(mensaje)}, 1000);
-                                 }
+                                 // }
 
-                            }else{
-                                console.log('Tiempo Finalizado');
+                            // }else{
+                                // console.log('Tiempo Finalizado');
                                 // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                                 // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!")
                             }
