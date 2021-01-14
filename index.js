@@ -47,10 +47,36 @@ client.on('message', async (message) => {
         switch(command){
             case 'start':
                 if((minute <= 60) && (minute > 0)){
+
+                    function zfill(number, width) {
+                        var numberOutput = Math.abs(number); /* Valor absoluto del número */
+                        var length = number.toString().length; /* Largo del número */ 
+                        var zero = "0"; /* String de cero */  
+                        
+                        if (width <= length) {
+                            if (number < 0) {
+                                 return ("-" + numberOutput.toString()); 
+                            } else {
+                                 return numberOutput.toString(); 
+                            }
+                        } else {
+                            if (number < 0) {
+                                return ("-" + (zero.repeat(width - length)) + numberOutput.toString()); 
+                            } else {
+                                return ((zero.repeat(width - length)) + numberOutput.toString()); 
+                            }
+                        }
+                    }
                     
                     function temp_call(){
                         
                         if ((minute == 0) && (second == 0)) {
+                            message.channel.messages.fetch().then((results) => {
+                                message.channel.bulkDelete(results).catch(console.error);
+                            })
+
+                            clearInterval(timeCheck);
+                            timeCheck = undefined;
                             // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                             message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
@@ -60,11 +86,19 @@ client.on('message', async (message) => {
                         if ((minute > 0) && (second == 0)) {
                             minute--; 
                             second = 60;
-                            mensaje.edit("Tiempo actual: "+minute+" : 59");
+                            division = minute % 10;
+
+                            if(division == 0){
+                                channel_remote_duel.send(" JUGADORES, QUEDAN "+minute+" MINUTOS...!!!");
+                            }
+
+                                                            
+                                mensaje.edit("Tiempo actual: "+zfill(minute,2)+" : 59");
                         }
                         
-                        mensaje.edit("Tiempo actual: "+minute+" : "+second);
-                        second--;     
+                        second--;
+                        mensaje.edit("Tiempo actual: "+zfill(minute,2)+" : "+zfill(second,2));
+                           
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
