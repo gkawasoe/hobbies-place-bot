@@ -96,7 +96,11 @@ client.on('message', async (message) => {
                             second = 60;
                             mensaje.edit("Tiempo actual: "+minute+" : 59");
                         }
-                        second--; 
+                        
+                        mensaje.edit("Tiempo actual: "+minute+" : "+second);
+                        second--;     
+                        
+                        
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
