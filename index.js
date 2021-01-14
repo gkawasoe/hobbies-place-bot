@@ -136,7 +136,7 @@ client2.on('message', async (message) => {
                             .setColor(0x338aff)
                             // .setThumbnail("imagenes/kaiba_tenor.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
-                            .setImage("imagenes/kaiba_tenor.gif");
+                            .setImage("https://tenor.com/Gqfw.gif");
                             channel_remote_duel.send(embed_msj);
 
                         //Fin de sección
