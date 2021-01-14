@@ -91,14 +91,12 @@ client.on('message', async (message) => {
                                 band=true; 
                             }else if (((minute > 0) && (second == 0)) || ((minute == 1) && (second == 0))) {
                                 
-                                division = minute/10;
+                                division = minute%10;
 
-                                if(Number.isInteger(division)){
+                                if(division == 0){
                                     // temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
                                     // channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
                                     message.channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                                }else{
-                                    message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
                                 }
                                     minute--; 
                                     second = 59;
