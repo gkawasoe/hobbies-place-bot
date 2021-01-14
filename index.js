@@ -71,9 +71,9 @@ client.on('message', async (message) => {
                     function temp_call(){
                         
                         if ((minute == 0) && (second == 0)) {
-                            message.channel.messages.fetch().then((results) => {
-                                message.channel.bulkDelete(results).catch(console.error);
-                            })
+                            // message.channel.messages.fetch().then((results) => {
+                            //     message.channel.bulkDelete(results).catch(console.error);
+                            // })
 
                             temporizador_channel.messages.fetch().then((results) => {
                                 temporizador_channel.bulkDelete(results).catch(console.error);
@@ -116,9 +116,9 @@ client.on('message', async (message) => {
                 //let role = guild.roles.cache.find(r => r.name === "@Yu-Gi-Oh!");
 
                     if(message.member.roles.cache.has('713839638162309210')){
-                        message.channel.messages.fetch().then((results) => {
-                            message.channel.bulkDelete(results).catch(console.error);
-                        })
+                        // message.channel.messages.fetch().then((results) => {
+                        //     message.channel.bulkDelete(results).catch(console.error);
+                        // })
 
                         temporizador_channel.messages.fetch().then((results) => {
                             temporizador_channel.bulkDelete(results).catch(console.error);
@@ -145,9 +145,9 @@ client.on('message', async (message) => {
             break;
 
             case 'stop':
-                message.channel.messages.fetch().then((results) => {
-                    message.channel.bulkDelete(results).catch(console.error);
-                })
+                // message.channel.messages.fetch().then((results) => {
+                //     message.channel.bulkDelete(results).catch(console.error);
+                // })
 
                 temporizador_channel.messages.fetch().then((results) => {
                     temporizador_channel.bulkDelete(results).catch(console.error);
