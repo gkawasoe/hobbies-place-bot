@@ -24,7 +24,7 @@ for(const file of commandFiles){
 //const channel = new Discord.TextChannel();
 
 
-client.login(config.token);
+client.login(process.in.DJS_TOKEN);
 
 client.on('ready', () => {
 	console.log('Hobbies Place Bot esta listo..!!!');
@@ -42,7 +42,7 @@ client.on('message', async (message) => {
 
     const command = args.shift().toLowerCase();
 
-    const source = client.login(config.token);
+    const source = client.login(process.in.DJS_TOKEN);
 
     const channel_remote_duel = client.channels.cache.find(channel => channel.name === "remote-duel");
     const temporizador_channel = client.channels.cache.find(channel => channel.name === 'temporizador');
