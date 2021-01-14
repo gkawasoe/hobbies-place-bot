@@ -281,7 +281,7 @@ client2.on('message', async (message) => {
                                     // .setThumbnail("https://tenor.com/Gqfw.gif")
                                     .setDescription("JUGADORES, QUEDAN "+min_capture+" MINUTOS DEL TIEMPO EXTRA...!!!")
                                     .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                                    channel_remote_duel.send(embed_msj4_extra;
+                                    channel_remote_duel.send(embed_msj4_extra);
 
                                 //Fin de sección
                                 // channel_remote_duel.send(" JUGADORES, QUEDAN "+min_capture+" MINUTOS EXTRAS...!!!");
