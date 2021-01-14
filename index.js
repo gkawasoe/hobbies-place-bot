@@ -134,9 +134,9 @@ client2.on('message', async (message) => {
                             .setTitle("RONDA INICIADA")
                             // .setAuthor("Hobbies Place")
                             .setColor(0x338aff)
-                            // .setThumbnail("imagenes/kaiba_tenor.gif")
+                            .setThumbnail("https://tenor.com/Gqfw.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
-                            .setImage("https://tenor.com/Gqfw.gif");
+                            .setImage("imagenes/kaiba_seto_blue_eyes_white_dragon.jpg");
                             channel_remote_duel.send(embed_msj);
 
                         //Fin de sección
