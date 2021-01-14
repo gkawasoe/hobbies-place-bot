@@ -86,6 +86,18 @@ client2.on('message', async (message) => {
                             clearInterval(timeCheck);
                             timeCheck = undefined;
                             // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                            //Sección de mensaje Embed
+                            embed_msj2 = new MessageEmbed()
+                                .setTitle("TIEMPO FINALIZADO")
+                                // .setAuthor("Hobbies Place")
+                                .setColor(0x338aff)
+                                // .setThumbnail("https://tenor.com/Gqfw.gif")
+                                .setDescription("00:00")
+                                .setImage("https://tenor.com/vOsc.gif");
+                                
+                                channel_remote_duel.send(embed_msj2);
+
+                            //Fin de sección
                             channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                             // message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             band=true; 
@@ -129,14 +141,15 @@ client2.on('message', async (message) => {
                             temporizador_channel.bulkDelete(results).catch(console.error);
                         })
 
-                        //Sección de mensaje Embed
-                        const embed_msj = new MessageEmbed()
+                        //Sección de mensaje Embed para "RONDA INICIADA"
+                        embed_msj = new MessageEmbed()
                             .setTitle("RONDA INICIADA")
                             // .setAuthor("Hobbies Place")
                             .setColor(0x338aff)
-                            .setThumbnail("https://tenor.com/Gqfw.gif")
+                            // .setThumbnail("https://tenor.com/Gqfw.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
                             .setImage("https://i.imgflip.com/1ift34.jpg");
+                            https://tenor.com/vOsc.gif
                             channel_remote_duel.send(embed_msj);
 
                         //Fin de sección
