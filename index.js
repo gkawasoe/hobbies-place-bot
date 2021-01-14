@@ -81,10 +81,14 @@ client.on('message', async (message) => {
 
                             clearInterval(timeCheck);
                             timeCheck = undefined;
-                            temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                            // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
-                            message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                            // message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             band=true; 
+                        }
+
+                        if((minute == 1) && (second == 0)){
+                            channel_remote_duel.send(" JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
                         }
 
                         if((minute > 0) && (second == 0)) {
@@ -97,15 +101,11 @@ client.on('message', async (message) => {
                                 channel_remote_duel.send(" JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
                             }
                                                             
-                            mensaje.edit("Tiempo actual: "+zfill(minute,2)+" : 59");
+                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
                         }
 
-                        if((minute == 1) && (second == 0)){
-                            channel_remote_duel.send(" JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
-                        }
-                        
                         second--;
-                        mensaje.edit("Tiempo actual: "+zfill(minute,2)+" : "+zfill(second,2));
+                        mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));
                            
                     }
 
@@ -129,7 +129,107 @@ client.on('message', async (message) => {
                         
                         minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('El tiempo actual es: '+minute+' : '+second);   
+                        mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
+                            
+                            if(!band){
+                                    timeCheck = setInterval(() => {
+                                    temp_call(mensaje)}, 2000);
+                            }
+                    }else{
+                        message.reply('Acceso denegado...!!!').catch(console.error);
+                    }
+                
+                }else{
+                    message.reply('Por favor introduzca un formato de comando apropiado. El formato apropiado es el siguiente: \n -start 10, -start 45, ... \n (Siempre y cuando el valor númerico sea menor o igual a 60)');
+                }
+            
+            break;
+
+            case 'extra':
+                if((minute <= 60) && (minute > 0)){
+
+                    function zfill(number, width) {
+                        var numberOutput = Math.abs(number); /* Valor absoluto del número */
+                        var length = number.toString().length; /* Largo del número */ 
+                        var zero = "0"; /* String de cero */  
+                        
+                        if (width <= length) {
+                            if (number < 0) {
+                                 return ("-" + numberOutput.toString()); 
+                            } else {
+                                 return numberOutput.toString(); 
+                            }
+                        } else {
+                            if (number < 0) {
+                                return ("-" + (zero.repeat(width - length)) + numberOutput.toString()); 
+                            } else {
+                                return ((zero.repeat(width - length)) + numberOutput.toString()); 
+                            }
+                        }
+                    }
+                    
+                    function temp_call(){
+                        
+                        if ((minute == 0) && (second == 0)) {
+                            // message.channel.messages.fetch().then((results) => {
+                            //     message.channel.bulkDelete(results).catch(console.error);
+                            // })
+
+                            temporizador_channel.messages.fetch().then((results) => {
+                                temporizador_channel.bulkDelete(results).catch(console.error);
+                            })
+
+                            clearInterval(timeCheck);
+                            timeCheck = undefined;
+                            // temporizador_channel.send("00:00 TIEMPO EXTRA FINALIZADO...!!!");
+                            channel_remote_duel.send("00:00 TIEMPO EXTRA FINALIZADO...!!!");
+                            // message.channel.send("00:00 TIEMPO EXTRA FINALIZADO...!!!");
+                            band=true; 
+                        }
+
+                        if((minute == 1) && (second == 0)){
+                            channel_remote_duel.send(" JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO EXTRA...!!!");
+                        }
+
+                        if((minute > 0) && (second == 0)) {
+                            division = minute % 10;
+                            min_capture = minute;
+                            minute--; 
+                            second = 60;
+
+                            if(division == 0){
+                                channel_remote_duel.send(" JUGADORES, QUEDAN "+min_capture+" MINUTOS EXTRAS...!!!");
+                            }
+                                                            
+                            mensaje.edit("Tiempo extra: "+zfill(minute,2)+" : 59");
+                        }
+
+                        second--;
+                        mensaje.edit("Tiempo extra: "+zfill(minute,2)+" : "+zfill(second,2));
+                           
+                    }
+
+                //Rol de @Yu-Gi-Oh! => 713769108046610542
+                //En esta sección el "IF" pudiera ser como el de abajo, pero se recomienda mejor por el
+                //id real del Rol, como se demuestra en el "IF" activo actualmente
+                //if(message.member.roles.cache.some(r => r.name === "@Admin")){
+
+                //let role = guild.roles.cache.find(r => r.name === "@Yu-Gi-Oh!");
+
+                    if(message.member.roles.cache.has('713839638162309210')){
+                        // message.channel.messages.fetch().then((results) => {
+                        //     message.channel.bulkDelete(results).catch(console.error);
+                        // })
+
+                        temporizador_channel.messages.fetch().then((results) => {
+                            temporizador_channel.bulkDelete(results).catch(console.error);
+                        })
+
+                        channel_remote_duel.send('TIEMPO EXTRA INICIADO ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
+                        
+                        minute--; second--; 
+                        
+                        mensaje = await temporizador_channel.send('Tiempo extra: '+minute+' : '+second);   
                             
                             if(!band){
                                     timeCheck = setInterval(() => {
