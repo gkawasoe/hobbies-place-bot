@@ -87,20 +87,21 @@ client.on('message', async (message) => {
                             band=true; 
                         }
 
-                        if ((minute > 0) && (second == 0)) {
+                        if((minute > 0) && (second == 0)) {
                             division = minute % 10;
                             min_capture = minute;
                             minute--; 
                             second = 60;
-                            
 
                             if(division == 0){
-                                console.log('residuo: '+division);
                                 channel_remote_duel.send(" JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
                             }
-
                                                             
-                                mensaje.edit("Tiempo actual: "+zfill(minute,2)+" : 59");
+                            mensaje.edit("Tiempo actual: "+zfill(minute,2)+" : 59");
+                        }
+
+                        if((minute == 1) && (second == 0)){
+                            channel_remote_duel.send(" JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
                         }
                         
                         second--;
