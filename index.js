@@ -133,12 +133,15 @@ client2.on('message', async (message) => {
                         const embed_msj = new MessageEmbed()
                             .setTitle()
                             .setAuthor(guild.name)
-                            .setColor(0x338aff);
+                            .setColor(0x338aff).
+                            // .setThumbnail("imagenes/kaiba_tenor.gif")
+                            .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
+                            .setImage("imagenes/kaiba_tenor.gif");
                             channel_remote_duel.send(embed_msj);
 
                         //Fin de sección
 
-                        channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
+                        // channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                         
                         minute--; second--; 
                         
