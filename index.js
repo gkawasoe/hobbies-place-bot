@@ -151,8 +151,7 @@ client.on('message', async (message) => {
                         
                         mensaje = await message.channel.send('El tiempo actual es: '+minute+' : '+second);   
                             
-                            // if(!band){
-                            while(!band){
+                            if(!band){
                                  // for(let i=0;i<600000;i++){
                                     timeCheck = setInterval(() => {
                                     temp_call(mensaje)}, 1000);
