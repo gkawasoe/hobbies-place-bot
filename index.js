@@ -77,7 +77,7 @@ client.on('message', async (message) => {
 
                             clearInterval(timeCheck);
                             timeCheck = undefined;
-                            // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                            temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
                             message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
                             band=true; 
@@ -89,6 +89,7 @@ client.on('message', async (message) => {
                             division = minute % 10;
 
                             if(division == 0){
+                                console.log('residuo: '+division);
                                 channel_remote_duel.send(" JUGADORES, QUEDAN "+minute+" MINUTOS...!!!");
                             }
 
@@ -113,9 +114,9 @@ client.on('message', async (message) => {
                             message.channel.bulkDelete(results).catch(console.error);
                         })
                         
-                        // temporizador_channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
-                        // channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
-                        message.channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE A TOD@S...!!!');
+                        temporizador_channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
+                        channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
+                        message.channel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                        
                         minute--; second--; 
                         
