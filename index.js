@@ -131,8 +131,8 @@ client2.on('message', async (message) => {
 
                         //Sección de mensaje Embed
                         const embed_msj = new MessageEmbed()
-                            .setTitle()
-                            .setAuthor(guild.name)
+                            .setTitle("RONDA INICIADA")
+                            // .setAuthor("Hobbies Place")
                             .setColor(0x338aff)
                             // .setThumbnail("imagenes/kaiba_tenor.gif")
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
