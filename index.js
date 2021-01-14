@@ -70,61 +70,52 @@ client.on('message', async (message) => {
                 if((minute <= 60) && (minute > 0)){
                     
                     function temp_call(){
-                        if((second > 0) && (timeCheck != undefined)){
+                        minute--;
+                        mensaje.edit('tiempo: '+minute);
+                        // if((second > 0) && (timeCheck != undefined)){
                             
-                            if((minute >= 10) && (second >=10)){
-                                mensaje.edit("Tiempo actual: "+minute+" : "+second);
-                            }else if((minute >= 10) && (second < 10)){
-                                mensaje.edit("Tiempo actual: "+minute+" : 0"+second);
-                            }else if((minute < 10) && (second >=10)){
-                                mensaje.edit("Tiempo actual: 0"+minute+" : "+second);
-                            }else if((minute < 10) && (second < 10)){
-                                mensaje.edit("Tiempo actual: 0"+minute+" : 0"+second);
-                            }
+                        //     if((minute >= 10) && (second >=10)){
+                        //         mensaje.edit("Tiempo actual: "+minute+" : "+second);
+                        //     }else if((minute >= 10) && (second < 10)){
+                        //         mensaje.edit("Tiempo actual: "+minute+" : 0"+second);
+                        //     }else if((minute < 10) && (second >=10)){
+                        //         mensaje.edit("Tiempo actual: 0"+minute+" : "+second);
+                        //     }else if((minute < 10) && (second < 10)){
+                        //         mensaje.edit("Tiempo actual: 0"+minute+" : 0"+second);
+                        //     }
 
-                            // 0 0 0
-                            if ((minute == 0) && (second == 0)) {
-                                // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
-                                band=true; 
-                            }
+                        //     // 0 0 0
+                        //     if ((minute == 0) && (second == 0)) {
+                        //         // temporizador_channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                        //         // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
+                        //         message.channel.send("00:00 TIEMPO FINALIZADO...!!!");
+                        //         band=true; 
+                        //     }
                          
-                            // 0 1 1
-                                if((minute == 1) && (second == 0)){
-                                    // temporizador_channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                                    // channel_remote_duel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                                    message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
-                                    minute--;
-                                    second = 59;
+                        //     // 0 1 1
+                        //         if((minute == 1) && (second == 0)){
+                        //             // temporizador_channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                        //             // channel_remote_duel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                        //             message.channel.send("JUGADORES SOLO RESTA 0"+minute+" MINUTO...!!!");
+                        //             minute--;
+                        //             second = 59;
                                     
-                                }
-                            //0 1 0
-                            if ((minute > 0) && (second == 0)) {
+                        //         }
+                        //     //0 1 0
+                        //     if ((minute > 0) && (second == 0)) {
                                 
-                                division = minute/10;
+                        //         division = minute/10;
 
-                                if(Number.isInteger(division)){
-                                    // temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                                    // channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                                    message.channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
-                                }
-                                    minute--; 
-                                    second = 59;
-                            }
-                            //1 0 0 
-                            // if ((minute == 0) && (second == 0)) {
-                            //     second = 59; //second_2 = 59;
-                            //     minute = 59; //minute_2 = 59;
-                            // }
-                            //0 0 1 //1 0 1 //1 1 1 
-                            
-                            // //1 1 0
-                            // if ((minute > 0) && (second == 0)) {
-                            //     minute--; //minute_2--;
-                            // }
-                            second--;
-                        }
+                        //         if(Number.isInteger(division)){
+                        //             // temporizador_channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                        //             // channel_remote_duel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                        //             message.channel.send("JUGADORES SOLO RESTAN "+minute+" MINUTOS...!!!");
+                        //         }
+                        //             minute--; 
+                        //             second = 59;
+                        //     }
+                        //     second--;
+                        // }
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
