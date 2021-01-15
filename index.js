@@ -18,11 +18,11 @@ for(const file of commandFiles){
 
 const numero_dia = new Date().getDay();
 
-if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){    
+// if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){    
     client2.login(process.env.DJS_TOKEN);
-}else{
-    client2.login("undefined");
-}
+// }else{
+//     client2.login("undefined");
+// }
 
 
 client2.on('ready', () => {
