@@ -181,7 +181,7 @@ client2.on('message', async (message) => {
                         
                         minute--; second--; 
                         
-                        mensaje = temporizador_channel.send('Tiempo xD: '+minute+' : '+second);   
+                        mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
                             if(!band){
                                     timeCheck = setInterval(() => {
