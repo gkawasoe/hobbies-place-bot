@@ -15,10 +15,4 @@
   "devDependencies": {
     "nodemon": "^2.0.7"
   }
-  
-  import { setIntervalAsync } from 'set-interval-async/dynamic'
-import { setIntervalAsync } from 'set-interval-async/fixed'
-import { setIntervalAsync } from 'set-interval-async/legacy'
-import { clearIntervalAsync } from 'set-interval-async'
-  
 }
