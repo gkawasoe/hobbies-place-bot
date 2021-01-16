@@ -5,15 +5,18 @@ const client2 = new Discord.Client();
 const guild = new Discord.Guild();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-import {
-  dynamic,
-  fixed,
-  legacy,
+const {
+  setIntervalAsync,
   clearIntervalAsync
-} from 'set-interval-async'
-const { setIntervalAsync: setIntervalAsyncD } = dynamic
-const { setIntervalAsync: setIntervalAsyncF } = fixed
-const { setIntervalAsync: setIntervalAsyncL } = legacy
+} = require('set-interval-async/dynamic')
+
+// Choose one of the following flavors: dynamic, fixed, legacy.
+
+var setIntervalAsync = SetIntervalAsync.dynamic.setIntervalAsync
+
+// Load `clearIntervalAsync` as well.
+
+var clearIntervalAsync = SetIntervalAsync.
 
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
