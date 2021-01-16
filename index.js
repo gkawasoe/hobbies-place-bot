@@ -188,7 +188,7 @@ async function delay(ms) {
                         
                         minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
+                        mensaje = temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
                             
                             // if(!band){
                             //         timeCheck = setTimeout(async () => {
