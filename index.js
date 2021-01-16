@@ -176,7 +176,7 @@ client2.on('message', async (message) => {
                         embed_msj = new MessageEmbed()
                             .setTitle("RONDA INICIADA")
                             .setColor(0x338aff)
-                            .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
+                            .setDescription("("+minute2+" minutos), SUERTE PARA TOD@S...!!!")
                             .addField("Aviso: ","Para visualizar el tiempo, por favor entrar a la sala de #temporizador.",true)
                             .setImage("https://i.imgflip.com/1ift34.jpg");
                             // channel_remote_duel.send(embed_msj);
