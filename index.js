@@ -51,7 +51,7 @@ client2.on('message', async (message) => {
 
         switch(command){
             case 'start':
-                // if((minute <= 60) && (minute > 0)){
+                if((minute2 <= 60) && (minute2 > 0)){
 
                     function zfill(number, width) {
                         var numberOutput = Math.abs(number); /* Valor absoluto del número */
@@ -200,9 +200,9 @@ client2.on('message', async (message) => {
                         message.reply('Acceso denegado...!!!');
                     }
                 
-                // }else{
-                //     message.reply('Por favor introduzca un formato de comando apropiado. El formato apropiado es el siguiente: \n -start 10, -start 45, ... \n (Siempre y cuando el valor númerico sea menor o igual a 60)');
-                // }
+                }else{
+                    message.reply('Por favor introduzca un formato de comando apropiado. El formato apropiado es el siguiente: \n -start 10, -start 45, ... \n (Siempre y cuando el valor númerico sea menor o igual a 60)');
+                }
             
             break;
 
