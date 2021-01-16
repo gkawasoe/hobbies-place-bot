@@ -183,7 +183,7 @@ client2.on('message', async (message) => {
                             
                             if(!band){
                                     timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 1001);
+                                    temp_call(mensaje)}, 1*1000);
                             }
                     }else{
                         message.reply('Acceso denegado...!!!').catch(console.error);
