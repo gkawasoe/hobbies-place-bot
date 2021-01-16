@@ -12,7 +12,7 @@ const {
 
 // Choose one of the following flavors: dynamic, fixed, legacy.
 
-var setIntervalAsync = SetIntervalAsync.dynamic.setIntervalAsync
+setIntervalAsync = SetIntervalAsync.dynamic.setIntervalAsync
 
 // Load `clearIntervalAsync` as well.
 
