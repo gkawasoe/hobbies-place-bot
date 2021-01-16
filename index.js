@@ -34,8 +34,6 @@ let timeCheck; let mensaje;
 
 client2.on('message', async (message) => {
     
-    
-
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -79,16 +77,17 @@ client2.on('message', async (message) => {
                     
                     async function temp_call(){
                         
-
-                        if(command === 'tiempo'){
-                            embed_msj_x = new MessageEmbed()
-                                .setTitle("TIEMPO:")
-                                .setColor(0xfa1212)
-                                .setDescription(minute+" : "+second);
+                        if(message.content === '-tiempo 1'){
+                            // embed_msj_x = new MessageEmbed()
+                            //     .setTitle("TIEMPO:")
+                            //     .setColor(0xfa1212)
+                            //     .setDescription(minute+" : "+second);
                                 
-                                // channel_remote_duel.send(embed_msj2);
-                                prueba_tiempo.send(embed_msj_x);        
+                            //     // channel_remote_duel.send(embed_msj2);
+                            //     prueba_tiempo.send(embed_msj_x);        
+                            message.reply("Tiempo: "+minute+" : "+second);
                         }
+                        
 
                         if ((minute == 0) && (second == 0)) {
                             temporizador_channel.messages.fetch().then((results) => {
