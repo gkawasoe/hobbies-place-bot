@@ -134,11 +134,10 @@ client2.on('message', async (message) => {
                             }
                                                             
                             mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
+                        }else{
+                            second--;
+                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
-
-                        second--;
-                        mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));
-                           
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
@@ -176,7 +175,7 @@ client2.on('message', async (message) => {
                             
                             if(!band){
                                     timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 1001);
+                                    temp_call(mensaje)}, 1000);
                             }
                     }else{
                         message.reply('Acceso denegado...!!!').catch(console.error);
@@ -274,10 +273,12 @@ client2.on('message', async (message) => {
                             }
                                                             
                             mensaje.edit("Tiempo extra: "+zfill(minute,2)+" : 59");
+                        }else{
+                            second--;
+                            mensaje.edit("Tiempo extra: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
 
-                        second--;
-                        mensaje.edit("Tiempo extra: "+zfill(minute,2)+" : "+zfill(second,2));
+                        
                            
                     }
 
