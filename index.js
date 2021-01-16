@@ -140,11 +140,16 @@ client2.on('message', message => {
                                 //Fin de sección
                                 // channel_remote_duel.send("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
                             }
-                                                            
-                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
+                            temporizador_channel.messages.fetch().then((results) => {
+                            temporizador_channel.bulkDelete(results);
+                        })               
+                            temporizador_channel.send("Tiempo: "+zfill(minute,2)+" : 59");
                         }else{
                             second--;
-                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
+                            temporizador_channel.messages.fetch().then((results) => {
+                            temporizador_channel.bulkDelete(results);
+                        })
+                            temporizador_channel.send("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
 
                         
