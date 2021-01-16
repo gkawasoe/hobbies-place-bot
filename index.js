@@ -77,16 +77,7 @@ client2.on('message', async (message) => {
                     
                     async function temp_call(){
                         
-                        if(message.content === '-tiempo 1'){
-                            // embed_msj_x = new MessageEmbed()
-                            //     .setTitle("TIEMPO:")
-                            //     .setColor(0xfa1212)
-                            //     .setDescription(minute+" : "+second);
-                                
-                            //     // channel_remote_duel.send(embed_msj2);
-                            //     prueba_tiempo.send(embed_msj_x);        
-                            message.reply("Tiempo: "+minute+" : "+second);
-                        }
+
                         
 
                         if ((minute == 0) && (second == 0)) {
@@ -186,6 +177,16 @@ client2.on('message', async (message) => {
                             return await new Promise(resolve => {
                                 timeCheck = setInterval(async () => {
                                     try{
+                                        if(message.content === '-tiempo 1'){
+                                            // embed_msj_x = new MessageEmbed()
+                                            //     .setTitle("TIEMPO:")
+                                            //     .setColor(0xfa1212)
+                                            //     .setDescription(minute+" : "+second);
+                                                
+                                            //     // channel_remote_duel.send(embed_msj2);
+                                            //     prueba_tiempo.send(embed_msj_x);        
+                                            message.reply("Tiempo: "+minute+" : "+second);
+                                        }
                                         temp_call();    
                                     }catch(e){
                                         console.warn("error: "+e.message)
