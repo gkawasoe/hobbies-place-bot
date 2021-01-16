@@ -146,10 +146,11 @@ async function delay(ms) {
                                 // channel_remote_duel.send("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
                             }
                                                             
-                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
+                            return mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
+                        
                         }else{
                             second--;
-                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
+                            return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
 
                         
@@ -188,7 +189,7 @@ async function delay(ms) {
                         
                         minute--; second--; 
                         
-                        mensaje = temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
+                        mensaje = await temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
                             
                             // if(!band){
                             //         timeCheck = setTimeout(async () => {
