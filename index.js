@@ -82,7 +82,7 @@ async function delay(ms) {
                         }
                     }
                     
-                    function temp_call(){
+                    async function temp_call(){
                         
                         if ((minute == 0) && (second == 0)) {
                             // message.channel.messages.fetch().then((results) => {
@@ -217,6 +217,7 @@ async function delay(ms) {
                             //         }
                             //     },1000);
                             // });
+                            temp_call();
                     }else{
                         message.reply('Acceso denegado...!!!');
                     }
