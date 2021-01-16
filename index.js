@@ -50,17 +50,6 @@ client2.on('message', async (message) => {
     let second = 60;
     let band=false;    
 
-    if(message.content === '-tiempo'){
-        embed_msj_x = new MessageEmbed()
-        .setTitle("TIEMPO:")
-        .setColor(0xfa1212)
-        .setDescription(minute+" : "+second)
-        .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
-        
-        // channel_remote_duel.send(embed_msj2);
-        prueba_tiempo.send(embed_msj_x);        
-    }
-
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
 
@@ -90,6 +79,17 @@ client2.on('message', async (message) => {
                     
                     async function temp_call(){
                         
+                        if(message.content === '-tiempo'){
+                            embed_msj_x = new MessageEmbed()
+                            .setTitle("TIEMPO:")
+                            .setColor(0xfa1212)
+                            .setDescription(minute+" : "+second)
+                            .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
+                            
+                            // channel_remote_duel.send(embed_msj2);
+                            prueba_tiempo.send(embed_msj_x);        
+                        }
+
                         if ((minute == 0) && (second == 0)) {
                             temporizador_channel.messages.fetch().then((results) => {
                                 temporizador_channel.bulkDelete(results);
