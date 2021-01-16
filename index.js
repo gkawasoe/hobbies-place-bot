@@ -32,7 +32,7 @@ client2.on('ready', () => {
 
 let timeCheck;
 
-client2.on('message', async (message) => {
+client2.on('message', message => {
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -196,7 +196,7 @@ async function delay(ms) {
                         mensaje = temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
                             if(!band){
-                                    timeCheck = setInterval(async () => {
+                                    timeCheck = setInterval(() => {
                                         try{
                                             temp_call(mensaje)        
                                         }catch(e){
