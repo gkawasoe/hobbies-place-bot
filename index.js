@@ -30,7 +30,7 @@ client2.on('ready', () => {
 	client2.user.setStatus('dnd');
 })
 
-let timeCheck = undefined;
+let timeCheck;
 
 client2.on('message', async (message) => {
     
@@ -50,6 +50,13 @@ client2.on('message', async (message) => {
 
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
+
+//FUNCION DE PRUEBA
+async function delay(ms) {
+  // return await for better async stack trace support in case of errors.
+  return await new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
         switch(command){
             case 'start':
@@ -184,8 +191,11 @@ client2.on('message', async (message) => {
                         mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
                             if(!band){
-                                    timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 1000);
+                                    // timeCheck = setInterval(() => {
+                                    // temp_call(mensaje)}, 1000);
+
+                                    await delay(1000);
+                                    temp_call();
 
                                     
                             }
@@ -352,7 +362,7 @@ client2.on('message', async (message) => {
                 // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
                 prueba_tiempo.send("TIEMPO DETENIDO...!!!");
                 clearInterval(timeCheck);
-                timeCheck = undefined;
+                // timeCheck = undefined;
             break;
 
         }
