@@ -34,6 +34,8 @@ let timeCheck; let mensaje;
 
 client2.on('message', async (message) => {
     
+    
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -48,15 +50,19 @@ client2.on('message', async (message) => {
     let second = 60;
     let band=false;    
 
+    if(message.content === '-tiempo'){
+        embed_msj_x = new MessageEmbed()
+        .setTitle("TIEMPO:")
+        .setColor(0xfa1212)
+        .setDescription(minute+" : "+second)
+        .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
+        
+        // channel_remote_duel.send(embed_msj2);
+        prueba_tiempo.send(embed_msj_x);        
+    }
+
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
-
-//FUNCION DE PRUEBA
-async function delay(ms) {
-  // return await for better async stack trace support in case of errors.
-  return await new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
         switch(command){
             case 'start':
@@ -125,7 +131,7 @@ async function delay(ms) {
                                     prueba_tiempo.send(embed_msj4);
 
                                 //Fin de sección
-                                // channel_remote_duel.send("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
+
                             }else if(division == 1){
                                 //Sección de mensaje Embed para "TIEMPO DE CADA 10 MINUTO"
                                 embed_msj4 = new MessageEmbed()
@@ -144,8 +150,7 @@ async function delay(ms) {
                         
                         second--;
                         return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
-                        
-                           
+                    
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
@@ -156,9 +161,6 @@ async function delay(ms) {
                 //let role = guild.roles.cache.find(r => r.name === "@Yu-Gi-Oh!");
 
                     if(message.member.roles.cache.has('713839638162309210')){
-                        // message.channel.messages.fetch().then((results) => {
-                        //     message.channel.bulkDelete(results).catch(console.error);
-                        // })
 
                         temporizador_channel.messages.fetch().then((results) => {
                             temporizador_channel.bulkDelete(results);
@@ -182,17 +184,6 @@ async function delay(ms) {
                         
                         mensaje = await temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
                             
-                            // if(!band){
-                            //         timeCheck = setTimeout(async () => {
-                            //             try{
-                            //                 temp_call(mensaje)        
-                            //             }catch(e){
-                            //                 console.warn("mensaje de error: "+e.message)
-                            //             }
-                            //         }, 1000);
-                                    
-                            // }
-
                             return await new Promise(resolve => {
                                 timeCheck = setInterval(async () => {
                                     try{
