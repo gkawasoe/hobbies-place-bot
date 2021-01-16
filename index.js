@@ -80,7 +80,7 @@ client2.on('message', async (message) => {
                             // })
 
                             temporizador_channel.messages.fetch().then((results) => {
-                                temporizador_channel.bulkDelete(results).catch(console.error);
+                                temporizador_channel.bulkDelete(results);
                             })
 
                             clearInterval(timeCheck);
@@ -153,7 +153,7 @@ client2.on('message', async (message) => {
                         // })
 
                         temporizador_channel.messages.fetch().then((results) => {
-                            temporizador_channel.bulkDelete(results).catch(console.error);
+                            temporizador_channel.bulkDelete(results);
                         })
 
                         //Sección de mensaje Embed para "RONDA INICIADA"
@@ -178,7 +178,7 @@ client2.on('message', async (message) => {
                                     temp_call(mensaje)}, 1000);
                             }
                     }else{
-                        message.reply('Acceso denegado...!!!').catch(console.error);
+                        message.reply('Acceso denegado...!!!');
                     }
                 
                 }else{
@@ -218,7 +218,7 @@ client2.on('message', async (message) => {
                             // })
 
                             temporizador_channel.messages.fetch().then((results) => {
-                                temporizador_channel.bulkDelete(results).catch(console.error);
+                                temporizador_channel.bulkDelete(results);
                             })
 
                             clearInterval(timeCheck);
@@ -295,7 +295,7 @@ client2.on('message', async (message) => {
                         // })
 
                         temporizador_channel.messages.fetch().then((results) => {
-                            temporizador_channel.bulkDelete(results).catch(console.error);
+                            temporizador_channel.bulkDelete(results);
                         })
 
                         //Sección de mensaje Embed para "RONDA INICIADA"
@@ -322,7 +322,7 @@ client2.on('message', async (message) => {
                                     // timeCheck = setInterval(temp_call(mensaje), 1001);
                             }
                     }else{
-                        message.reply('Acceso denegado...!!!').catch(console.error);
+                        message.reply('Acceso denegado...!!!');
                     }
                 
                 }else{
@@ -337,7 +337,7 @@ client2.on('message', async (message) => {
                 // })
 
                 temporizador_channel.messages.fetch().then((results) => {
-                    temporizador_channel.bulkDelete(results).catch(console.error);
+                    temporizador_channel.bulkDelete(results);
                 })
 
                 temporizador_channel.send('TIEMPO DETENIDO...!!!');
