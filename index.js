@@ -362,7 +362,11 @@ async function delay(ms) {
                 temporizador_channel.send('TIEMPO DETENIDO...!!!');
                 // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
                 prueba_tiempo.send("TIEMPO DETENIDO...!!!");
-                clearInterval(timeCheck);
+                try{
+                    clearInterval(timeCheck);
+                }catch(e){
+                    console.warn("mensaje de error: "+e.message)
+                }
                 // timeCheck = undefined;
             break;
 
