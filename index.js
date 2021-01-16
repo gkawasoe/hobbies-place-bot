@@ -128,7 +128,7 @@ async function delay(ms) {
                             minute--; 
                             second = 60;
 
-                            if((division == 0) ||(division == 1)){
+                            if(division == 0){
                                 //Sección de mensaje Embed para "TIEMPO DE CADA 10 MINUTO"
                                 embed_msj4 = new MessageEmbed()
                                     .setTitle("AVISO IMPORTANTE")
@@ -140,6 +140,18 @@ async function delay(ms) {
 
                                 //Fin de sección
                                 // channel_remote_duel.send("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
+                            }else if(division == 1){
+                                //Sección de mensaje Embed para "TIEMPO DE CADA 10 MINUTO"
+                                embed_msj4 = new MessageEmbed()
+                                    .setTitle("AVISO IMPORTANTE")
+                                    .setColor(0xf6fa12)
+                                    .setDescription("JUGADORES, QUEDA "+min_capture+" MINUTO...!!!")
+                                    .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
+                                    // channel_remote_duel.send(embed_msj4);
+                                    prueba_tiempo.send(embed_msj4);
+
+                                //Fin de sección
+                                // channel_remote_duel.send("JUGADORES, QUEDA "+min_capture+" MINUTO...!!!");                                
                             }
                                                             
                             return mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
