@@ -5,6 +5,12 @@ const client2 = new Discord.Client();
 const guild = new Discord.Guild();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
+const { setIntervalAsync } = require('set-interval-async/dynamic')
+const { setIntervalAsync } = require('set-interval-async/fixed')
+const { setIntervalAsync } = require('set-interval-async/legacy')
+const { clearIntervalAsync } = require('set-interval-async')
+
+
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 
@@ -171,15 +177,19 @@ client2.on('message', async (message) => {
                         
                         mensaje = await temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
                             
-                            return await new Promise(async (resolve) => {
-                                timeCheck = setInterval(async () => {
-                                    try{
-                                        temp_call();    
-                                    }catch(e){
-                                        console.warn("error: "+e.message)
-                                    }
-                                },1000);
-                            });
+                            // return await new Promise(async (resolve) => {
+                            //     timeCheck = setInterval(async () => {
+                            //         try{
+                            //             temp_call();    
+                            //         }catch(e){
+                            //             console.warn("error: "+e.message)
+                            //         }
+                            //     },1000);
+                            // });
+
+                            timeCheck = setIntervalAsync(async () =>{
+                                temp_call();
+                            },1000);
                     }else{
                         message.reply('Acceso denegado...!!!');
                     }
