@@ -145,11 +145,16 @@ async function delay(ms) {
                                 //Fin de sección
                                 // channel_remote_duel.send("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
                             }
-                                                            
-                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
+                            temporizador_channel.messages.fetch().then((results) => {
+                                temporizador_channel.bulkDelete(results);
+                            })                                                            
+                            temporizador_channel.send("Tiempo: "+zfill(minute,2)+" : 59");
                         }else{
                             second--;
-                            mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
+                            temporizador_channel.messages.fetch().then((results) => {
+                                temporizador_channel.bulkDelete(results);
+                            })
+                            temporizador_channel.send("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
 
                         
@@ -188,7 +193,7 @@ async function delay(ms) {
                         
                         minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
+                        mensaje = temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
                             if(!band){
                                     timeCheck = setInterval(async () => {
