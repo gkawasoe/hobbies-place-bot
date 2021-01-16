@@ -83,8 +83,7 @@ client2.on('message', async (message) => {
                             embed_msj_x = new MessageEmbed()
                             .setTitle("TIEMPO:")
                             .setColor(0xfa1212)
-                            .setDescription(minute+" : "+second)
-                            .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
+                            .setDescription(minute+" : "+second);
                             
                             // channel_remote_duel.send(embed_msj2);
                             prueba_tiempo.send(embed_msj_x);        
