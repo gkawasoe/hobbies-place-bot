@@ -188,7 +188,7 @@ async function delay(ms) {
                         
                         minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
+                        mensaje = await temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
                             
                             // if(!band){
                             //         timeCheck = setTimeout(async () => {
@@ -204,7 +204,7 @@ async function delay(ms) {
                             return await new Promise(resolve => {
                                 timeCheck = setInterval(async () => {
                                     try{
-                                        temp_call(mensaje)    
+                                        temp_call();    
                                     }catch(e){
                                         console.warn("error: "+e.message)
                                     }
