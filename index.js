@@ -32,7 +32,7 @@ client2.on('ready', () => {
 
 let timeCheck;
 
-client2.on('message', async (message) => {
+client2.on('message', message => {
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -51,11 +51,6 @@ client2.on('message', async (message) => {
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
 
-//FUNCION DE PRUEBA
-async function delay(ms) {
-  // return await for better async stack trace support in case of errors.
-  return await new Promise(resolve => setTimeout(resolve, ms));
-}
 
 
         switch(command){
@@ -188,7 +183,8 @@ async function delay(ms) {
                         
                         minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
+                        // mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
+                        mensaje = temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
                             // if(!band){
                             //         timeCheck = setTimeout(async () => {
