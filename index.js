@@ -184,8 +184,10 @@ client2.on('message', async (message) => {
                         mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
                             if(!band){
-                                    timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 1*1000);
+                                    // timeCheck = setInterval(() => {
+                                    // temp_call(mensaje)}, 1000);
+
+                                    timeCheck = setInterval(temp_call, 1000);
                             }
                     }else{
                         message.reply('Acceso denegado...!!!');
