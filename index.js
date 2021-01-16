@@ -190,16 +190,22 @@ async function delay(ms) {
                         
                         mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
                             
-                            if(!band){
-                                    timeCheck = setTimeout(async () => {
-                                        try{
-                                            temp_call(mensaje)        
-                                        }catch(e){
-                                            console.warn("mensaje de error: "+e.message)
-                                        }
-                                    }, 1000);
+                            // if(!band){
+                            //         timeCheck = setTimeout(async () => {
+                            //             try{
+                            //                 temp_call(mensaje)        
+                            //             }catch(e){
+                            //                 console.warn("mensaje de error: "+e.message)
+                            //             }
+                            //         }, 1000);
                                     
-                            }
+                            // }
+
+                            return new Promise(resolve => {
+                                timeCheck = setInterval(() => {
+                                    temp_call(mensaje)
+                                },1000);
+                            });
                     }else{
                         message.reply('Acceso denegado...!!!');
                     }
