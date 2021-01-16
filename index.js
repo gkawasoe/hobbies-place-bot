@@ -30,7 +30,7 @@ client2.on('ready', () => {
 	client2.user.setStatus('dnd');
 })
 
-let timeCheck;
+let timeCheck = undefined;
 
 client2.on('message', async (message) => {
     
