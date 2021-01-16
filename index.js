@@ -316,10 +316,10 @@ client2.on('message', async (message) => {
                         mensaje = await temporizador_channel.send('Tiempo extra: '+minute+' : '+second);   
                             
                             if(!band){
-                                    // timeCheck = setInterval(() => {
-                                    // temp_call(mensaje)}, 1001);
+                                    timeCheck = setInterval(() => {
+                                    temp_call(mensaje)}, 1000);
 
-                                    timeCheck = setInterval(temp_call(mensaje), 1001);
+                                    // timeCheck = setInterval(temp_call(mensaje), 1001);
                             }
                     }else{
                         message.reply('Acceso denegado...!!!').catch(console.error);
