@@ -30,7 +30,7 @@ client2.on('ready', () => {
 	client2.user.setStatus('dnd');
 })
 
-client2.on('message', async (message) => {
+client2.on('message', message => {
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
