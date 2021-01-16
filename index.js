@@ -30,6 +30,8 @@ client2.on('ready', () => {
 	client2.user.setStatus('dnd');
 })
 
+let timeCheck;
+
 client2.on('message', async (message) => {
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -345,7 +347,8 @@ client2.on('message', async (message) => {
                 })
 
                 temporizador_channel.send('TIEMPO DETENIDO...!!!');
-                channel_remote_duel.send('TIEMPO DETENIDO...!!!');
+                // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
+                prueba_tiempo.send("'TIEMPO DETENIDO...!!!");
                 clearInterval(timeCheck);
                 timeCheck = undefined;
             break;
