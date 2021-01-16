@@ -77,9 +77,6 @@ client2.on('message', async (message) => {
                     
                     async function temp_call(){
                         
-
-                        
-
                         if ((minute == 0) && (second == 0)) {
                             temporizador_channel.messages.fetch().then((results) => {
                                 temporizador_channel.bulkDelete(results);
@@ -174,19 +171,9 @@ client2.on('message', async (message) => {
                         
                         mensaje = await temporizador_channel.send('Tiempo: '+zfill(minute,2)+' : '+zfill(second,2));   
                             
-                            return await new Promise(resolve => {
+                            return await new Promise(async (resolve) => {
                                 timeCheck = setInterval(async () => {
                                     try{
-                                        if(message.content === '-tiempo 1'){
-                                            // embed_msj_x = new MessageEmbed()
-                                            //     .setTitle("TIEMPO:")
-                                            //     .setColor(0xfa1212)
-                                            //     .setDescription(minute+" : "+second);
-                                                
-                                            //     // channel_remote_duel.send(embed_msj2);
-                                            //     prueba_tiempo.send(embed_msj_x);        
-                                            message.reply("Tiempo: "+minute+" : "+second);
-                                        }
                                         temp_call();    
                                     }catch(e){
                                         console.warn("error: "+e.message)
