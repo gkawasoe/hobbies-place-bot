@@ -85,10 +85,6 @@ async function delay(ms) {
                     async function temp_call(){
                         
                         if ((minute == 0) && (second == 0)) {
-                            // message.channel.messages.fetch().then((results) => {
-                            //     message.channel.bulkDelete(results).catch(console.error);
-                            // })
-
                             temporizador_channel.messages.fetch().then((results) => {
                                 temporizador_channel.bulkDelete(results);
                             })
@@ -112,19 +108,19 @@ async function delay(ms) {
                             band=true; 
                         }
 
-                        if((minute == 1) && (second == 0)){
-                            //Sección de mensaje Embed para "TIEMPO DE 1 MINUTO"
-                            embed_msj3 = new MessageEmbed()
-                                .setTitle("AVISO IMPORTANTE")
-                                .setColor(0xf6fa12)
-                                .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!")
-                                .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                                // channel_remote_duel.send(embed_msj3);
-                                prueba_tiempo.send(embed_msj3);
+                        // if((minute == 1) && (second == 0)){
+                        //     //Sección de mensaje Embed para "TIEMPO DE 1 MINUTO"
+                        //     embed_msj3 = new MessageEmbed()
+                        //         .setTitle("AVISO IMPORTANTE")
+                        //         .setColor(0xf6fa12)
+                        //         .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!")
+                        //         .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
+                        //         // channel_remote_duel.send(embed_msj3);
+                        //         prueba_tiempo.send(embed_msj3);
 
-                            //Fin de sección
-                            // channel_remote_duel.send("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
-                        }
+                        //     //Fin de sección
+                        //     // channel_remote_duel.send("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
+                        // }
 
                         if((minute > 0) && (second == 0)) {
                             division = minute % 10;
@@ -132,7 +128,7 @@ async function delay(ms) {
                             minute--; 
                             second = 60;
 
-                            if(division == 0){
+                            if((division == 0) ||(division == 1)){
                                 //Sección de mensaje Embed para "TIEMPO DE CADA 10 MINUTO"
                                 embed_msj4 = new MessageEmbed()
                                     .setTitle("AVISO IMPORTANTE")
