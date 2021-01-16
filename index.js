@@ -201,7 +201,7 @@ async function delay(ms) {
                                     
                             // }
 
-                            return new Promise(resolve => {
+                            return await new Promise(resolve => {
                                 timeCheck = setInterval(() => {
                                     temp_call(mensaje)
                                 },1000);
