@@ -18,11 +18,11 @@ for(const file of commandFiles){
 
 const numero_dia = new Date().getDay();
 
-// if((numero_dia == 4) || (numero_dia == 6) || (numero_dia == 7)){    
+if((numero_dia == 6) || (numero_dia == 7)){    
     client2.login(process.env.DJS_TOKEN);
-// }else{
-//     client2.login("undefined");
-// }
+}else{
+    client2.login("undefined");
+}
 
 
 client2.on('ready', () => {
@@ -93,7 +93,7 @@ client2.on('message', async (message) => {
                                 .setDescription("00:00")
                                 .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
                                 
-                                channel_remote_duel.send(embed_msj2);
+                                // channel_remote_duel.send(embed_msj2);
 
                             //Fin de sección
                             // channel_remote_duel.send("00:00 TIEMPO FINALIZADO...!!!");
@@ -108,7 +108,7 @@ client2.on('message', async (message) => {
                                 .setColor(0xf6fa12)
                                 .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!")
                                 .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                                channel_remote_duel.send(embed_msj3);
+                                // channel_remote_duel.send(embed_msj3);
 
                             //Fin de sección
                             // channel_remote_duel.send("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
@@ -127,7 +127,7 @@ client2.on('message', async (message) => {
                                     .setColor(0xf6fa12)
                                     .setDescription("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!")
                                     .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                                    channel_remote_duel.send(embed_msj4);
+                                    // channel_remote_duel.send(embed_msj4);
 
                                 //Fin de sección
                                 // channel_remote_duel.send("JUGADORES, QUEDAN "+min_capture+" MINUTOS...!!!");
@@ -164,7 +164,7 @@ client2.on('message', async (message) => {
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
                             .addField("Aviso: ","Para visualizar el tiempo, por favor entrar a la sala de #temporizador.",true)
                             .setImage("https://i.imgflip.com/1ift34.jpg");
-                            channel_remote_duel.send(embed_msj);
+                            // channel_remote_duel.send(embed_msj);
 
                         //Fin de sección
 
@@ -232,7 +232,7 @@ client2.on('message', async (message) => {
                                 .setDescription("00:00")
                                 .setImage("https://64.media.tumblr.com/44f3fc202068dd9c26f469badbe166f7/tumblr_inline_pcamfq5JBQ1s39z39_500.png");
                                 
-                                channel_remote_duel.send(embed_msj2_extra);
+                                // channel_remote_duel.send(embed_msj2_extra);
 
                             //Fin de sección
 
@@ -248,7 +248,7 @@ client2.on('message', async (message) => {
                                 .setColor(0xf6fa12)
                                 .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO DEL TIEMPO EXTRA...!!!")
                                 .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                                channel_remote_duel.send(embed_msj3_extra);
+                                // channel_remote_duel.send(embed_msj3_extra);
 
                             //Fin de sección
                             // channel_remote_duel.send(" JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO DEL TIEMPO EXTRA...!!!");
@@ -267,7 +267,7 @@ client2.on('message', async (message) => {
                                     .setColor(0xf6fa12)
                                     .setDescription("JUGADORES, QUEDAN "+min_capture+" MINUTOS DEL TIEMPO EXTRA...!!!")
                                     .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                                    channel_remote_duel.send(embed_msj4_extra);
+                                    // channel_remote_duel.send(embed_msj4_extra);
 
                                 //Fin de sección
                                 // channel_remote_duel.send(" JUGADORES, QUEDAN "+min_capture+" MINUTOS EXTRAS...!!!");
@@ -304,7 +304,7 @@ client2.on('message', async (message) => {
                             .setDescription("("+minute+" minutos), SUERTE PARA TOD@S...!!!")
                             .addField("Aviso: ","Para visualizar el tiempo, por favor entrar a la sala de #temporizador.",true)
                             .setImage("https://i.pinimg.com/originals/d6/ed/94/d6ed9448c359a332e38472af219c1d5d.jpg");
-                            channel_remote_duel.send(embed_msj_extra);
+                            // channel_remote_duel.send(embed_msj_extra);
 
                         //Fin de sección
 
@@ -315,8 +315,10 @@ client2.on('message', async (message) => {
                         mensaje = await temporizador_channel.send('Tiempo extra: '+minute+' : '+second);   
                             
                             if(!band){
-                                    timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 2000);
+                                    // timeCheck = setInterval(() => {
+                                    // temp_call(mensaje)}, 1001);
+
+                                    timeCheck = setInterval(temp_call(mensaje), 1001);
                             }
                     }else{
                         message.reply('Acceso denegado...!!!').catch(console.error);
@@ -338,7 +340,7 @@ client2.on('message', async (message) => {
                 })
 
                 temporizador_channel.send('TIEMPO DETENIDO...!!!');
-                channel_remote_duel.send('TIEMPO DETENIDO...!!!');
+                // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
                 clearInterval(timeCheck);
                 timeCheck = undefined;
             break;
