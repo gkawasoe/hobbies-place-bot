@@ -188,6 +188,9 @@ client2.on('message', async (message) => {
                                     // temp_call(mensaje)}, 1000);
 
                                     timeCheck = setInterval(temp_call, 1000);
+                                    setTimeout( _ => {
+                                        clearInterval(timeCheck);
+                                    },1000);
                             }
                     }else{
                         message.reply('Acceso denegado...!!!');
