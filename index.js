@@ -152,15 +152,8 @@ async function delay(ms) {
                             mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
 
-                        return await new Promise(resolve => {
-                                timeCheck = setInterval(async () => {
-                                    try{
-                                        temp_call();    
-                                    }catch(e){
-                                        console.warn("error: "+e.message)
-                                    }
-                                },1000);
-                            });
+                        
+                           
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
@@ -208,16 +201,15 @@ async function delay(ms) {
                                     
                             // }
 
-                            // return await new Promise(resolve => {
-                            //     timeCheck = setInterval(async () => {
-                            //         try{
-                            //             temp_call();    
-                            //         }catch(e){
-                            //             console.warn("error: "+e.message)
-                            //         }
-                            //     },1000);
-                            // });
-                            temp_call();
+                            return await new Promise(resolve => {
+                                timeCheck = setInterval(async () => {
+                                    try{
+                                        temp_call();    
+                                    }catch(e){
+                                        console.warn("error: "+e.message)
+                                    }
+                                },1000);
+                            });
                     }else{
                         message.reply('Acceso denegado...!!!');
                     }
