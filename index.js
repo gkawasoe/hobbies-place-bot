@@ -187,10 +187,7 @@ client2.on('message', async (message) => {
                                     // timeCheck = setInterval(() => {
                                     // temp_call(mensaje)}, 1000);
 
-                                    timeCheck = setInterval(temp_call, 1000);
-                                    setTimeout( _ => {
-                                        clearInterval(timeCheck);
-                                    },1000);
+                                    
                             }
                     }else{
                         message.reply('Acceso denegado...!!!');
@@ -353,7 +350,7 @@ client2.on('message', async (message) => {
 
                 temporizador_channel.send('TIEMPO DETENIDO...!!!');
                 // channel_remote_duel.send('TIEMPO DETENIDO...!!!');
-                prueba_tiempo.send("'TIEMPO DETENIDO...!!!");
+                prueba_tiempo.send("TIEMPO DETENIDO...!!!");
                 clearInterval(timeCheck);
                 timeCheck = undefined;
             break;
