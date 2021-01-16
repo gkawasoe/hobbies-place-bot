@@ -35,7 +35,7 @@ client2.on('ready', () => {
 	client2.user.setStatus('dnd');
 })
 
-let timeCheck; let mensaje;
+let mensaje;
 
 client2.on('message', async (message) => {
     
@@ -186,7 +186,7 @@ client2.on('message', async (message) => {
                             //     },1000);
                             // });
 
-                            timeCheck = setIntervalAsync(async () =>{
+                            const timeCheck = setIntervalAsync(async () =>{
                                 temp_call();
                             },1000);
                     }else{
