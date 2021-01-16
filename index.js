@@ -53,15 +53,15 @@ client2.on('message', async (message) => {
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
 
-        if(message.content === '-tiempo'){
-                            embed_msj_x = new MessageEmbed()
-                            .setTitle("TIEMPO:")
-                            .setColor(0xfa1212)
-                            .setDescription(minute+" : "+second);
+        // if(message.content === '-tiempo 0'){
+        //                     embed_msj_x = new MessageEmbed()
+        //                     .setTitle("TIEMPO:")
+        //                     .setColor(0xfa1212)
+        //                     .setDescription(minute+" : "+second);
                             
-                            // channel_remote_duel.send(embed_msj2);
-                            prueba_tiempo.send(embed_msj_x);        
-                        }
+        //                     // channel_remote_duel.send(embed_msj2);
+        //                     prueba_tiempo.send(embed_msj_x);        
+        //                 }
 
         switch(command){
             case 'start':
@@ -362,6 +362,18 @@ client2.on('message', async (message) => {
                     console.warn("mensaje de error: "+e.message)
                 }
                 // timeCheck = undefined;
+            break;
+
+            case 'tiempo':
+
+            embed_msj_x = new MessageEmbed()
+                            .setTitle("TIEMPO:")
+                            .setColor(0xfa1212)
+                            .setDescription(minute+" : "+second);
+                            
+                            // channel_remote_duel.send(embed_msj2);
+                            prueba_tiempo.send(embed_msj_x);        
+
             break;
 
         }
