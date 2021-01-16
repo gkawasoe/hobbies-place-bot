@@ -147,12 +147,13 @@ async function delay(ms) {
                             }
                                                             
                             return mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
-                        
-                        }else{
-                            second--;
-                            return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
-
+                        // }else{
+                        //     second--;
+                        //     return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
+                        // }
+                        second--;
+                        return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         
                            
                     }
