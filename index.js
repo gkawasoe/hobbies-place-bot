@@ -85,7 +85,7 @@ client2.on('message', async (message) => {
                         minute = minute < 10 ? "0" + minute : minute;
                         second = second < 10 ? "0" + second : second;
 
-                        prueba_tiempo.send("Tiempo: "+minute+" : "+second);
+                        prueba_channel.send("Tiempo: "+minute+" : "+second);
 
                         tiempo --;
                     /*    
