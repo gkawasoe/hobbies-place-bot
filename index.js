@@ -108,20 +108,6 @@ async function delay(ms) {
                             band=true; 
                         }
 
-                        // if((minute == 1) && (second == 0)){
-                        //     //Sección de mensaje Embed para "TIEMPO DE 1 MINUTO"
-                        //     embed_msj3 = new MessageEmbed()
-                        //         .setTitle("AVISO IMPORTANTE")
-                        //         .setColor(0xf6fa12)
-                        //         .setDescription("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!")
-                        //         .setImage("https://static.wikia.nocookie.net/yugiohenespanol/images/0/0d/Foto_mago_del_tiempo.jpg/revision/latest?cb=20120324223716&path-prefix=es");
-                        //         // channel_remote_duel.send(embed_msj3);
-                        //         prueba_tiempo.send(embed_msj3);
-
-                        //     //Fin de sección
-                        //     // channel_remote_duel.send("JUGADORES, QUEDA "+zfill(minute,2)+" MINUTO...!!!");
-                        // }
-
                         if((minute > 0) && (second == 0)) {
                             division = minute % 10;
                             min_capture = minute;
@@ -154,12 +140,8 @@ async function delay(ms) {
                                 // channel_remote_duel.send("JUGADORES, QUEDA "+min_capture+" MINUTO...!!!");                                
                             }
                                                             
-                            return mensaje.edit("Tiempo: "+zfill(minute,2)+" : 59");
                         }
-                        // }else{
-                        //     second--;
-                        //     return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
-                        // }
+                        
                         second--;
                         return mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         
