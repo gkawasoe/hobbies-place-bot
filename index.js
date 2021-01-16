@@ -53,6 +53,16 @@ client2.on('message', async (message) => {
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
         if(args[1]) return message.reply('Por favor especifique el comando correctamente...!!! <Demasiados argumentos utilzados, verifique>');
 
+        if(message.content === '-tiempo'){
+                            embed_msj_x = new MessageEmbed()
+                            .setTitle("TIEMPO:")
+                            .setColor(0xfa1212)
+                            .setDescription(minute+" : "+second);
+                            
+                            // channel_remote_duel.send(embed_msj2);
+                            prueba_tiempo.send(embed_msj_x);        
+                        }
+
         switch(command){
             case 'start':
                 if((minute <= 60) && (minute > 0)){
@@ -79,15 +89,7 @@ client2.on('message', async (message) => {
                     
                     async function temp_call(){
                         
-                        if(message.content === '-tiempo'){
-                            embed_msj_x = new MessageEmbed()
-                            .setTitle("TIEMPO:")
-                            .setColor(0xfa1212)
-                            .setDescription(minute+" : "+second);
-                            
-                            // channel_remote_duel.send(embed_msj2);
-                            prueba_tiempo.send(embed_msj_x);        
-                        }
+                        
 
                         if ((minute == 0) && (second == 0)) {
                             temporizador_channel.messages.fetch().then((results) => {
