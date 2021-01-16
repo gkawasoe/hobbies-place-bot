@@ -41,8 +41,9 @@ client2.on('message', async (message) => {
     const channel_remote_duel = client2.channels.cache.find(channel => channel.name === "remote-duel");
     const temporizador_channel = client2.channels.cache.find(channel => channel.name === 'temporizador');
 
-    let minute = args[0];
-    let second = 60;
+    let tiempo = args[0] * 60;
+    let minute2 = Math.floor(tiempo / 60);
+    let second2 = tiempo % 60;
     let band=false;    
 
     	if(!args[0]) return message.reply('Por favor especifique el comando correctamente...!!!');
@@ -73,7 +74,21 @@ client2.on('message', async (message) => {
                     }
                     
                     function temp_call(){
-                        
+                        if(tiempo <= 0){
+                            clearInterval(timeCheck);
+                        }
+
+                        let minute = Math.floor(tiempo / 60);
+                        let second = tiempo % 60;
+
+                        minute = minute < 10 ? "0" + minute : minute;
+                        second = second < 10 ? "0" + second : second;
+
+                        mensaje.edit("Tiempo: "+minute+" : "+second);
+
+                        tiempo --;
+                    /*    
+                    //Parte vieja
                         if ((minute == 0) && (second == 0)) {
                             // message.channel.messages.fetch().then((results) => {
                             //     message.channel.bulkDelete(results).catch(console.error);
@@ -138,6 +153,7 @@ client2.on('message', async (message) => {
                             second--;
                             mensaje.edit("Tiempo: "+zfill(minute,2)+" : "+zfill(second,2));    
                         }
+                    */
                     }
 
                 //Rol de @Yu-Gi-Oh! => 713769108046610542
@@ -169,14 +185,17 @@ client2.on('message', async (message) => {
 
                         // channel_remote_duel.send('RONDA INICIADA ('+minute+' minutos), SUERTE PARA TOD@S...!!!');
                         
-                        minute--; second--; 
+                        // minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('Tiempo: '+minute+' : '+second);   
+                        mensaje = await temporizador_channel.send('Tiempo: '+minute2+' : '+second2);   
                             
-                            if(!band){
-                                    timeCheck = setInterval(() => {
-                                    temp_call(mensaje)}, 1000);
-                            }
+                            // if(!band){
+                            //         timeCheck = setInterval(() => {
+                            //         temp_call(mensaje)}, 1000);
+                            // }
+
+                            temp_call()
+                            const timeCheck = setInterval(temp_call, 1000);
                     }else{
                         message.reply('Acceso denegado...!!!');
                     }
