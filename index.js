@@ -40,6 +40,7 @@ client2.on('message', async (message) => {
 
     const channel_remote_duel = client2.channels.cache.find(channel => channel.name === "remote-duel");
     const temporizador_channel = client2.channels.cache.find(channel => channel.name === 'temporizador');
+    const prueba_channel = client2.channels.cache.find(channel => channel.name === 'prueba_tiempo');
 
     let tiempo = args[0] * 60;
     let minute2 = Math.floor(tiempo / 60);
@@ -84,7 +85,7 @@ client2.on('message', async (message) => {
                         minute = minute < 10 ? "0" + minute : minute;
                         second = second < 10 ? "0" + second : second;
 
-                        mensaje.edit("Tiempo: "+minute+" : "+second);
+                        prueba_tiempo.send("Tiempo: "+minute+" : "+second);
 
                         tiempo --;
                     /*    
@@ -187,7 +188,7 @@ client2.on('message', async (message) => {
                         
                         // minute--; second--; 
                         
-                        mensaje = await temporizador_channel.send('Tiempo: '+minute2+' : '+second2);   
+                        //mensaje = await temporizador_channel.send('Tiempo: '+minute2+' : '+second2);   
                             
                             // if(!band){
                             //         timeCheck = setInterval(() => {
