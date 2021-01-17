@@ -16,7 +16,7 @@ setIntervalAsync = SetIntervalAsync.dynamic.setIntervalAsync
 
 // Load `clearIntervalAsync` as well.
 
-var clearIntervalAsync = SetIntervalAsync.
+clearIntervalAsync = SetIntervalAsync.
 
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
