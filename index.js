@@ -6,7 +6,9 @@ const guild = new Discord.Guild();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 const {
-  setIntervalAsync,
+  dynamic: { setIntervalAsync: setIntervalAsyncD },
+  fixed: { setIntervalAsync: setIntervalAsyncF },
+  legacy: { setIntervalAsync: setIntervalAsyncL },
   clearIntervalAsync
 } = require('./set-interval-async/dynamic')
 
