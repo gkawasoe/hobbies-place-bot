@@ -10,15 +10,15 @@ const {
   fixed: { setIntervalAsync: setIntervalAsyncF },
   legacy: { setIntervalAsync: setIntervalAsyncL },
   clearIntervalAsync
-} = require('./set-interval-async/dynamic/index.js')
+} = require('./set-interval-async/dynamic')
 
 // Choose one of the following flavors: dynamic, fixed, legacy.
 
-setIntervalAsync = SetIntervalAsync.dynamic.setIntervalAsync
+// setIntervalAsync = SetIntervalAsync.dynamic.setIntervalAsync
 
-// Load `clearIntervalAsync` as well.
+// // Load `clearIntervalAsync` as well.
 
-clearIntervalAsync = SetIntervalAsync.clearIntervalAsync
+// clearIntervalAsync = SetIntervalAsync.clearIntervalAsync
 
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
