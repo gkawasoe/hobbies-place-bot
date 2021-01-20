@@ -10,7 +10,7 @@ const {
   fixed: { setIntervalAsync: setIntervalAsyncF },
   legacy: { setIntervalAsync: setIntervalAsyncL },
   clearIntervalAsync
-} = require('./set-interval-async/dynamic')
+} = require('./set-interval-async/dynamic/index.js')
 
 // Choose one of the following flavors: dynamic, fixed, legacy.
 
