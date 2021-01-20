@@ -8,7 +8,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 const {
   setIntervalAsync,
   clearIntervalAsync
-} = require('set-interval-async/dynamic')
+} = require('./set-interval-async/dynamic')
 
 // Choose one of the following flavors: dynamic, fixed, legacy.
 
