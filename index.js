@@ -39,7 +39,7 @@ for(const file of commandFiles){
 //     client2.login("undefined");
 // }
 
-client2.login(process.env.DJS_TOKEN);
+//client2.login(process.env.DJS_TOKEN);
 
 client2.on('ready', () => {
 	console.log('Hobbies Place Bot esta listo..!!!');
